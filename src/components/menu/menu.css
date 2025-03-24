@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+.nav {
+  height: 3.7em;
+  width: 100%;
+  background-color: #42164b;
+  display: flex;
+  position: fixed;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.nav-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+.nav-links {
+  width: 100%;
+  max-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  top: 3.7em;
+  position: absolute;
+  overflow: hidden;
+  background-color: #42164b;
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
+  z-index: 1;
+  list-style: none;
+}
+
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  transform: translateY(0);
+  /* Ajusta la altura según la cantidad de elementos */
+}
+
+
+.nav-links li {
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+
+.nav-links li:hover {
+  color: #007bff;
+}
+
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+
+.menu-btn .bar {
+  width: 25px;
+  height: 4px;
+  background-color: #333;
+  transition: transform 0.3s ease;
+}
+
+
+.menu-btn:hover .bar {
+  background-color: #007bff;
+}

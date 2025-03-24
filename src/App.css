@@ -1,0 +1,9 @@
+.homeSection {
+  margin: 3em;
+  margin-top: 4.7em;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5em;
+}

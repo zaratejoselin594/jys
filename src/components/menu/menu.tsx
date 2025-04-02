@@ -1,6 +1,5 @@
 import './menu.css'
 import { IoMenuOutline } from "react-icons/io5";
-import { BsCart2 } from "react-icons/bs";
 
 
 interface Props {

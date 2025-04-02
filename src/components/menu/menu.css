@@ -1,100 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
+
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
 }
-
-
+/* Estilos para la barra de navegación */
 .nav {
-  height: 3.7em;
-  width: 100%;
-  background-color: #42164b;
+  background-color: #400056;
+  color: white;
+  padding: 1rem 2rem;
   display: flex;
-  position: fixed;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
   top: 0;
-  transition: all 0.3s ease-in-out;
-  z-index: 2;
+  left: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
-
 
 .nav-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
-
+/* Centrar el título */
 .nav-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* Botón de menú a la izquierda */
+.menu-btn {
+  font-size: 1.8rem;
+  cursor: pointer;
+  order: -1;
+  /* Lo posiciona primero en flexbox */
 }
 
 
+
+/* Menú responsive */
 .nav-links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 10em;
+  background: #400056;
   width: 100%;
-  max-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  top: 3.7em;
-  position: absolute;
-  overflow: hidden;
-  background-color: #42164b;
-  transition: transform 0.3s ease;
-  transform: translateY(-100%);
-  z-index: 1;
+  align-items: center;
   list-style: none;
+  padding-top: 60px;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
 }
-
 
 .nav-links.open {
-  display: flex;
-  flex-direction: column;
-  max-height: 300px;
-  transform: translateY(0);
-  /* Ajusta la altura según la cantidad de elementos */
-}
-
-
-.nav-links li {
-  cursor: pointer;
-  color: #fff;
-  transition: color 0.2s ease;
-}
-
-
-.nav-links li:hover {
-  color: #007bff;
-}
-
-
-.cart-icon {
-  cursor: pointer;
-  font-size: 20px;
-  color: #fff;
-}
-
-
-.menu-btn {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-
-.menu-btn .bar {
-  width: 25px;
-  height: 4px;
-  background-color: #333;
-  transition: transform 0.3s ease;
-}
-
-
-.menu-btn:hover .bar {
-  background-color: #007bff;
+  transform: translateY(0%);
 }

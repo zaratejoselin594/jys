@@ -1,28 +1,159 @@
+/* Contenedor principal de los planes de viaje */
 .planViajeContainer {
-  width: 20em;
-  height: 43em;
-  background-color: #444;
-}
-
-
-img {
-  width: 20em;
-  height: 20em;
-  object-fit: cover;
-}
-
-
-.slider {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .3em;
+  flex-direction: column;
+  width: 22em;
+  height: 35em;
+  max-width: 100%;
+  border-radius: 1.25em;
+  overflow: hidden;
+  box-shadow: 0px 0px .8em rgba(0, 0, 0, 0.3);
+  background-color: white;
+  transition: outline 0.3s ease-in-out;
+  top: 4.5em;
 }
 
+.planViajeContainer:hover {
+  outline: 2px solid #FF8B10 ;
+}
+
+/* Slider de imágenes */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 15em;
+  /* 200px / 16px */
+  overflow: hidden;
+  border-top-left-radius: 1.25em;
+  border-top-right-radius: 1.25em;
+}
+
+.slider-content img {
+  width: 100%;
+  height: 15em;
+  object-fit: cover;
+}
+
+/* Botones del slider */
 .btnSlider {
-  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
   border: none;
-  padding: .5em .9em;
-  background-color: #999;
+  padding: 0.625em;
+  /* 10px */
+  cursor: pointer;
   border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.btnSlider:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 0.6em;
+}
+
+.next {
+  right: 0.6em;
+}
+
+/* Contenido del plan de viaje */
+.planViajeContent {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9em;
+  /* 15px */
+  background-color: #f4f4f4;
+  border-bottom-left-radius: 1.25em;
+  border-bottom-right-radius: 1.25em;
+  flex: 1;
+}
+
+/* Títulos */
+.planViajeContent h3 {
+  margin: 0.3em 0;
+  /* 5px */
+  color: #730086;
+  font-size: 1.1em;
+  /* 18px */
+}
+
+/* Contenedor del texto con scroll */
+.planViajeDescripcion {
+  flex-grow: 1;
+  /* Ocupa todo el espacio disponible */
+  min-height: 10em;
+  /* Asegura que haya espacio */
+  max-height: 15em;
+  /* Máximo antes de hacer scroll */
+  overflow-y: auto;
+  /* Siempre permite el scroll cuando el contenido lo necesita */
+  padding-right: 0.3em;
+  color: #000;
+}
+
+/* Personalización del scrollbar */
+.planViajeDescripcion::-webkit-scrollbar {
+  width: 0.4em;
+  /* Más visible */
+}
+
+.planViajeDescripcion::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 0.6em;
+}
+
+.planViajeDescripcion::-webkit-scrollbar-thumb {
+  background: #730086;
+  border-radius: 0.6em;
+}
+
+.planViajeDescripcion::-webkit-scrollbar-thumb:hover {
+  background: #400056;
+}
+
+/* Precio y botón fijados al final */
+.planViajeFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  height: 5em;
+}
+
+/* Precio */
+.planViajeFooter h3 {
+  color: #FF8B10;
+  font-size: 1.25em;
+  /* 20px */
+  margin-bottom: 0.6em;
+  /* 10px */
+}
+
+/* Botón de compra */
+.planViajeFooter button {
+  width: 100%;
+  padding: 0.6em;
+  border: none;
+  background-color: #FF8B10;
+  color: white;
+  font-size: 1em;
+  /* 16px */
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.6em;
+  transition: background 0.3s, transform 0.2s;
+  outline: none;
+}
+
+.planViajeFooter button:hover {
+  background-color: #FCA160;
+  transform: scale(1.05);
 }

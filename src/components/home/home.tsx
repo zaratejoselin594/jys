@@ -1,6 +1,5 @@
 import './home.css';
 
-
 interface Props {
   images: string[];
   currentIndex: number;
@@ -10,7 +9,6 @@ interface Props {
   prevSlide: () => void;
   mensajeWpp: () => void;
 }
-
 
 const DivPlanViaje = ({ images, currentIndex, titulo, texto, nextSlide, prevSlide, mensajeWpp }: Props) => {
   return (
@@ -32,20 +30,23 @@ const DivPlanViaje = ({ images, currentIndex, titulo, texto, nextSlide, prevSlid
         </button>
       </div>
 
-
-      {/* Información del plan de viaje */}
+      {/* Contenido del plan de viaje */}
       <div className="planViajeContent">
-        <h3> {titulo} </h3>
-        <p> {texto} </p>
-        <h3>$123,457</h3>
-        <button onClick={mensajeWpp}>
-          Comprar
-        </button>
+        <h3>{titulo}</h3>
+
+        <div className="planViajeDescripcion">
+          <p>{texto}</p>
+        </div>
+
+        {/* Precio y botón de compra */}
+        <div className="planViajeFooter">
+          <h3>$123,457</h3>
+          <button onClick={mensajeWpp}>Comprar</button>
+        </div>
       </div>
     </div>
   );
 };
-
 
 export const Home = ({ images, currentIndex, titulo, texto, nextSlide, prevSlide, mensajeWpp }: Props) => {
   return (

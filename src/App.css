@@ -1,9 +1,57 @@
 .homeSection {
   margin: 3em;
-  margin-top: 4.7em;
+  margin-top: 6em;
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 5em;
+}
+/* Paleta de colores */
+:root {
+  --color-primario: #400056;
+  --color-secundario: #730086;
+  --color-terciario: #162769;
+  --color-acento: #FCA160;
+  --color-acento-secundario: #FF8B10;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--color-blanco);
+  color: var(--color-blanco);
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo para los títulos */
+h1,
+h2,
+h3 {
+  color: var(--color-acento);
+  font-weight: bold;
+}
+
+/* Botones */
+button {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--color-acento-secundario);
 }

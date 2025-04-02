@@ -1,4 +1,6 @@
 import './menu.css'
+import { IoMenuOutline } from "react-icons/io5";
+import { BsCart2 } from "react-icons/bs";
 
 
 interface Props {
@@ -9,9 +11,6 @@ export const Nav = ({ isMenuOpen, toggleMenu }: Props) => {
   return (
     <header className="nav">
       <div className="nav-content">
-        <div className="cart-icon">
-          <span>🛒</span>
-        </div>
         <p className="nav-title">JyS Viajes</p>
         <nav>
           <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
@@ -21,13 +20,11 @@ export const Nav = ({ isMenuOpen, toggleMenu }: Props) => {
             <li>Sobre nosotros</li>
           </ul>
         </nav>
-
         <div className="menu-btn" onClick={toggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+          <IoMenuOutline />
         </div>
       </div>
     </header>
   );
 };
+

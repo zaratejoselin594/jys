@@ -18,22 +18,16 @@ const capillaMonteImages = images.filter(img => img.includes('capillaMonte'));
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-
   // Alternar menú
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
-
-
   // Cierra el menú al hacer clic fuera de él
   const closeMenu = useCallback((e: MouseEvent) => {
     const target = e.target as HTMLElement;
     if (target.closest('.nav') || target.closest('.menu-btn')) return;
     setIsMenuOpen(false);
   }, []);
-
-
   useEffect(() => {
     if (isMenuOpen) {
       window.addEventListener('click', closeMenu);
@@ -43,11 +37,9 @@ const App: React.FC = () => {
     };
   }, [isMenuOpen, closeMenu]);
 
-
   const mensajeWpp = (info: string) => {
     window.open(`https://wa.me/+5493513665721?text=${encodeURIComponent(info)}`, "_blank");
   };
-
 
   return (
     <>
@@ -99,8 +91,6 @@ const App: React.FC = () => {
           aviso debido a factores externos.`
         }].map(({ titulo, texto }, index) => {
           const [currentIndex, setCurrentIndex] = useState(0);
-
-
           // Obtener la longitud del array de imágenes correspondiente al destino
           const getImagesLength = (title: string) => {
             switch (title) {
@@ -119,7 +109,6 @@ const App: React.FC = () => {
             }
           };
 
-
           const imagesToShow = (() => {
             switch (titulo) {
               case "Mina Clavero":
@@ -137,22 +126,18 @@ const App: React.FC = () => {
             }
           })();
 
-
           const nextSlide = () => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % getImagesLength(titulo));
           };
-
 
           const prevSlide = () => {
             setCurrentIndex((prevIndex) => (prevIndex === 0 ? getImagesLength(titulo) - 1 : prevIndex - 1));
           };
 
-
           useEffect(() => {
             const interval = setInterval(nextSlide, 3000);
             return () => clearInterval(interval);
           }, [titulo]);  // El useEffect depende del título para cambiar la longitud de las imágenes
-
 
           return (
             <Home

@@ -1,0 +1,136 @@
+:root {
+  --color-primario: #540045;
+  --color-secundario: #730086;
+  --color-terciario: #162769;
+  --color-acento: #ff9e3e;
+  --color-acento-secundario: #FF8B10;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+}
+
+footer{
+  margin-top: 12em;
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span{
+  color: #ff9e3e;
+
+}
+
+footer a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--color-acento-secundario);
+}
+
+.footer-sobre-nosotros {
+  max-width: 48rem;
+  /* similar a Tailwind's max-w-3xl */
+  width: 100%;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+  background-color: #ffffff;
+  padding: 2em;
+  border-radius: 1em;
+  margin-bottom: 2em;
+}
+
+.footer-sobre-nosotros::-webkit-scrollbar {
+  width: 6px;
+}
+h2{
+  font-size: 2em;
+}
+.footer-sobre-nosotros::-webkit-scrollbar-thumb {
+  background-color: var(--color-acento);
+  border-radius: 10px;
+}
+
+.footer-sobre-nosotros::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.footer-sobre-nosotros p {
+  font-size: 1.3em;
+  line-height: 1.7;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.footer-sobre-nosotros strong {
+  font-weight: bold;
+}
+
+.footer-sobre-nosotros h3 {
+  font-size: 1.125rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: var(--color-acento-secundario);
+}
+
+.footer-sobre-nosotros .resaltado {
+  font-weight: 500;
+  color: #000000;
+}
+.footer-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  min-width: 240px;
+}
+
+.footer-contacto h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-acento);
+}
+
+.footer-contacto .iconos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1.8rem;
+}
+
+.footer-contacto .iconos a {
+  color: #540045;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-contacto .iconos a:hover {
+  color: var(--color-acento-secundario);
+  transform: scale(1.1);
+}
+
+.footer-contacto .credito {
+  font-size: 0.85rem;
+  color: #540045;
+}
+
+.footer-contacto .credito a {
+  color: var(--color-acento);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.footer-contacto .credito a:hover {
+  color: var(--color-acento-secundario);
+}
+
+.waveFooter{
+  margin-bottom: 2em;
+  position: absolute;
+  top: -12em;
+  width: 100%;
+  height: 12em;
+}

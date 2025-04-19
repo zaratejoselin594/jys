@@ -1,5 +1,5 @@
 import './menu.css'
-import { IoMenuOutline } from "react-icons/io5";
+import { IoGridOutline } from "react-icons/io5";
 
 
 interface Props {
@@ -20,7 +20,7 @@ export const Nav = ({ isMenuOpen, toggleMenu }: Props) => {
           </ul>
         </nav>
         <div className="menu-btn" onClick={toggleMenu}>
-          <IoMenuOutline />
+          <IoGridOutline />
         </div>
       </div>
     </header>

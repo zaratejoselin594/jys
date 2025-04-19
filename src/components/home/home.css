@@ -1,11 +1,11 @@
 /* Contenedor principal de los planes de viaje */
 .planViajeContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   flex-direction: column;
   width: 22em;
-  height: 35em;
+  height: auto;
   max-width: 100%;
   border-radius: 1.25em;
   overflow: hidden;
@@ -15,9 +15,7 @@
   top: 4.5em;
 }
 
-.planViajeContainer:hover {
-  outline: 2px solid #FF8B10 ;
-}
+
 
 /* Slider de imágenes */
 .slider {
@@ -35,47 +33,68 @@
   height: 15em;
   object-fit: cover;
 }
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
 
+.caption {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 1px 3px #0003;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
 /* Botones del slider */
 .btnSlider {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  font-size: 2em;
   color: white;
   border: none;
-  padding: 0.625em;
-  /* 10px */
   cursor: pointer;
-  border-radius: 50%;
+  transform: translateY(-40%);
   transition: all 0.3s;
+  outline: none;
+  background-color: transparent;
 }
 
 .btnSlider:hover {
-  background: rgba(0, 0, 0, 0.8);
-  transform: translateY(-50%) scale(1.1);
+  color: #d2d1d1;
 }
 
 .prev {
-  left: 0.6em;
+  left: 0.3em;
 }
 
 .next {
-  right: 0.6em;
+  right: 0.3em;
 }
 
 /* Contenido del plan de viaje */
 .planViajeContent {
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 0.9em;
-  /* 15px */
   background-color: #f4f4f4;
   border-bottom-left-radius: 1.25em;
   border-bottom-right-radius: 1.25em;
   flex: 1;
 }
-
+.planViajeContent.open {
+  display: flex;
+}
+.planViajeContainer.open .overlay,
+.planViajeContainer.open .caption {
+  opacity: 0;
+}
 /* Títulos */
 .planViajeContent h3 {
   margin: 0.3em 0;
@@ -88,15 +107,11 @@
 /* Contenedor del texto con scroll */
 .planViajeDescripcion {
   flex-grow: 1;
-  /* Ocupa todo el espacio disponible */
-  min-height: 10em;
-  /* Asegura que haya espacio */
-  max-height: 15em;
-  /* Máximo antes de hacer scroll */
-  overflow-y: auto;
-  /* Siempre permite el scroll cuando el contenido lo necesita */
   padding-right: 0.3em;
   color: #000;
+  overflow-y: visible;
+  height: auto;
+  padding-bottom: .6em;
 }
 
 /* Personalización del scrollbar */
@@ -116,7 +131,7 @@
 }
 
 .planViajeDescripcion::-webkit-scrollbar-thumb:hover {
-  background: #400056;
+  background: #540045;
 }
 
 /* Precio y botón fijados al final */
@@ -125,7 +140,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: auto;
-  height: 5em;
+  height: 3em;
 }
 
 /* Precio */
@@ -138,7 +153,7 @@
 }
 
 /* Botón de compra */
-.planViajeFooter button {
+.planViajeFooter .buttonFooter, .btnFront {
   width: 100%;
   padding: 0.6em;
   border: none;
@@ -147,13 +162,71 @@
   font-size: 1em;
   /* 16px */
   font-weight: bold;
+  border: 2px solid #FF8B10;
   cursor: pointer;
   border-radius: 0.6em;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s, color 0.2s;
   outline: none;
+  text-decoration: none;
+}
+.btnFront{
+  margin: .2em;
+}
+.planViajeFooter .buttonFooter:hover, .btnFront:hover{
+  background-color: transparent;
+  color: #FF8B10;
 }
 
-.planViajeFooter button:hover {
-  background-color: #FCA160;
-  transform: scale(1.05);
+.inicioPag{
+  top: 4em;
+  height: 25em;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.programar {
+  height: 15em;
+  width: 100%;
+  background-color: #540045;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.programar div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
+  width: 80%;
+  z-index: 100;
+}
+.wave {
+  position: absolute;
+  bottom: 18.5em;
+  height: 8em;
+  width: 100%;
+}
+.wave2 {
+  height: 8em;
+  bottom: -2em;
+}
+
+@media (max-width: 600px) {
+  .inicioPag {
+    height: 30em;
+  }
+  .programar{
+    height: 30em;
+  }
+
+  .wave { 
+    display: none;
+  }
+  .wave2 {
+    display: none;
+  }
 }

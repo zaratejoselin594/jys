@@ -42,21 +42,25 @@
 }
 
 .caption {
+  width: 100%;
   position: absolute;
-  bottom: 1em;
-  left: 1em;
+  padding: 1em;
+  bottom: 0px;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
   text-shadow: 0 1px 3px #0003;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  display: flex;
+  justify-content: space-between;
 }
 /* Botones del slider */
 .btnSlider {
   position: absolute;
   top: 50%;
   font-size: 2em;
+  padding: .2em;
   color: white;
   border: none;
   cursor: pointer;

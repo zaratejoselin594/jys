@@ -1,6 +1,7 @@
 import './home.css';
 import { IoIosArrowDropleft } from "react-icons/io";
 import { IoIosArrowDropright } from "react-icons/io";
+import { TbHandClick } from "react-icons/tb";
 
 interface Props {
   images: string[];
@@ -20,7 +21,10 @@ const DivPlanViaje = ({ images, currentIndex, titulo, texto,isMenuOpen, nextSlid
       {/* Slider de imágenes */}
       <div className="slider">
         <div className="overlay"></div>
-        <div className="caption">{titulo}</div> {/* Texto desde el parámetro */}
+        <div className="caption">
+          <h4>{titulo}</h4>
+          <TbHandClick />
+        </div> {/* Texto desde el parámetro */}
         <button className="prev btnSlider" onClick={prevSlide} aria-label="Imagen anterior">
           <IoIosArrowDropleft />
         </button>
@@ -66,7 +70,7 @@ export const InicioPag = () => {
           <h1>Tu viaje seguro</h1>
           <p>
             En JYS Viajes ofrecemos transporte habilitado, cómodo y seguro. <br />
-            Traslados ejecutivos, viajes largos o eventos: te llevamos con puntualidad y confianza.
+            Traslados ejecutivos, grupales, turismo o eventos: te llevamos con puntualidad y confianza.
           </p>
           <a href="https://wa.me/+5493516691279" target="_blank" rel="noopener noreferrer">
             <button className='btnFront'>Viaja con JyS</button>

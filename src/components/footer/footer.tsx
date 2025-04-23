@@ -65,10 +65,10 @@ export const Footer = () => {
         <div className="footer-contacto">
           <h2>Contacto JyS Viajes</h2>
           <div className="iconos">
-            <a href="https://wa.me/tunumerowpp" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+            <a href="https://wa.me/+5493516691279" target="_blank" rel="noopener noreferrer" title="WhatsApp">
               <FaWhatsapp />
             </a>
-            <a href="https://instagram.com/tuusuario" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <a href="https://www.instagram.com/jysviajescba/" target="_blank" rel="noopener noreferrer" title="Instagram">
               <FaInstagram />
             </a>
             <a href="https://www.tiktok.com/@tuusuario" target="_blank" rel="noopener noreferrer" title="TikTok">

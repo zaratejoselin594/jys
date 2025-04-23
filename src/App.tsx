@@ -103,7 +103,6 @@ const App: React.FC = () => {
           titulo: "Capilla del Monte",
           texto: `Salimos desde el punto que el grupo elija, al horario acordado. Dependiendo del punto geográfico de salida pasamos por Villa del Lago, Bialet Massé, Horno Histórico el Argentino (1884), Cosquín (Capital nacional del Folklore), Plaza Prospero Molina, Valle Hermoso, La Falda, Huerta Grande, Villa Giardino, La Cumbre (se observa el Cristo Redentor, pero no se realiza el ascenso al mismo), Cruz Chica y Cruz Grande. Seguimos por Los Cocos, hasta llegar al Dique de Piscu Yaco y la telesilla, que en San Esteban y continuamos por Ruta N°38 hasta Capilla del Monte finalizando en el Dique el Cajón. Al regreso visitamos la fábrica de alfajores y chocolates.`
         }].map(({ titulo, texto }, index) => {
-          const isOpen = !!openPlans[index];
           const [currentIndex, setCurrentIndex] = useState(0);
           // Obtener la longitud del array de imágenes correspondiente al destino
           const getImagesLength = (title: string) => {
